@@ -19,21 +19,20 @@ struct ContentView: View {
                     .foregroundColor(Color("LightYellow"))
                     .cornerRadius(25)
                     .overlay(
-                        HStack()
-                        {
+                        HStack{
                             TextField("Search", text: self.$email)
                                 .frame(height: 55)
                                 .textFieldStyle(PlainTextFieldStyle())
                                 .padding([.horizontal], 4)
                                 .cornerRadius(16)
-
-                                .padding([.horizontal], 24)
+                                .padding([.horizontal],24)
                                 .background(RoundedRectangle(cornerRadius: 50).fill(Color.white))
                                 .foregroundColor(.black)
+                                .shadow(color: Color("Shadow"), radius: 8, x: 1, y: 1)
                             Image(systemName: "gearshape")
-                                .scaleEffect(2.5)
+                                .scaleEffect(2)
                                 .padding(.leading, 20)
-                                .padding(.trailing, 20)
+                                .padding(.trailing, 10)
                     }
                             .padding(.top, 20)
                             .padding(.leading, 20)
@@ -44,6 +43,7 @@ struct ContentView: View {
                     Text("18")
                 }.padding(.top, 20)
                 ScrollView{
+                    DIYview()
                     DIYview()
                 }
                 Spacer()

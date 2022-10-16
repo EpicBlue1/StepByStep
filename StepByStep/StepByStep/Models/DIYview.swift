@@ -39,8 +39,7 @@ struct DIYview: View {
                     }.padding()
                 )
         } .padding()
-        .background(Color("WhiteGray"))
-        .shadow(color: .red, radius: 5, x: 20, y: 20)
+        .shadow(color: Color("Shadow"), radius: 8, x: 1, y: 1)
     }
 }
 
