@@ -2,7 +2,7 @@
 //  DIYview.swift
 //  StepByStep
 //
-//  Created by Leander Van Aarde on 2022/10/16.
+//  Created by Reinhardt de Beer on 2022/10/16.
 //
 
 import SwiftUI

@@ -11,6 +11,8 @@ struct OnBoarding: View {
     
     @State private var email = ""
     @State private var password = ""
+    
+    var BoardData : OnBoard = OnboardData[0]
 
     var body: some View {
             VStack{
@@ -26,14 +28,12 @@ struct OnBoarding: View {
                                 .font(.system(size: 26, weight: .bold))
                                 .frame(maxWidth: .infinity, alignment: .center)
                                 .padding(.top, 40)
-                        }.padding(.leading, 20)
-                            .padding(.top, 60)
-                            .padding(.trailing, 20)
+                        }
+                            .padding(.top, 50)
                 )
                 TabView(){
-                    OnBoardModel().tag(0)
-                    OnBoardModel().tag(1)
-                    OnBoardModel().tag(2)
+                    OnBoardModel(title: "lol", image: "lol", description: "String").tag(0)
+                    OnBoardModel(title: "lolTwo", image: "lol", description: "String").tag(1)
                 }.tabViewStyle(PageTabViewStyle())
 
                 
@@ -51,6 +51,7 @@ struct OnBoarding: View {
             }.navigationBarHidden(true)
             .ignoresSafeArea(.all)
             .background(Color("WhiteGray"))
+            .padding(.bottom, 20)
 
     }
 };

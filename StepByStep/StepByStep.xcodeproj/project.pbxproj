@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FFB9A6E2902ACAA004B3215 /* Onboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB9A6D2902ACAA004B3215 /* Onboard.swift */; };
+		3FFB9A702902AD3B004B3215 /* OnboardsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB9A6F2902AD3B004B3215 /* OnboardsData.swift */; };
 		6EEDBD4828FC91D2001FE41F /* DIYview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEDBD4728FC91D2001FE41F /* DIYview.swift */; };
 		6EEDBD4B28FC9EF5001FE41F /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEDBD4A28FC9EF5001FE41F /* OnBoarding.swift */; };
 		6EEDBD4D28FCA141001FE41F /* OnBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEDBD4C28FCA141001FE41F /* OnBoardModel.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FFB9A6D2902ACAA004B3215 /* Onboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboard.swift; sourceTree = "<group>"; };
+		3FFB9A6F2902AD3B004B3215 /* OnboardsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardsData.swift; path = StepByStep/Models/OnboardsData.swift; sourceTree = SOURCE_ROOT; };
 		6EEDBD4728FC91D2001FE41F /* DIYview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIYview.swift; sourceTree = "<group>"; };
 		6EEDBD4A28FC9EF5001FE41F /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
 		6EEDBD4C28FCA141001FE41F /* OnBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardModel.swift; sourceTree = "<group>"; };
@@ -39,11 +43,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6EEDBD4328FC6CCB001FE41F /* Views */ = {
+		3F92254429029EF7005DF1B2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				B608B25828DA3BB200D12806 /* ContentView.swift */,
 				6EEDBD4A28FC9EF5001FE41F /* OnBoarding.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		6EEDBD4328FC6CCB001FE41F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6EEDBD4728FC91D2001FE41F /* DIYview.swift */,
+				6EEDBD4C28FCA141001FE41F /* OnBoardModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -51,8 +64,7 @@
 		6EEDBD4428FC6CD8001FE41F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6EEDBD4728FC91D2001FE41F /* DIYview.swift */,
-				6EEDBD4C28FCA141001FE41F /* OnBoardModel.swift */,
+				3FFB9A6D2902ACAA004B3215 /* Onboard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -60,6 +72,7 @@
 		6EEDBD4928FC9C5E001FE41F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3FFB9A6F2902AD3B004B3215 /* OnboardsData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -83,6 +96,7 @@
 		B608B25528DA3BB200D12806 /* StepByStep */ = {
 			isa = PBXGroup;
 			children = (
+				3F92254429029EF7005DF1B2 /* Screens */,
 				6EEDBD4928FC9C5E001FE41F /* Data */,
 				6EEDBD4428FC6CD8001FE41F /* Models */,
 				6EEDBD4328FC6CCB001FE41F /* Views */,
@@ -174,6 +188,8 @@
 				B608B25928DA3BB200D12806 /* ContentView.swift in Sources */,
 				6EEDBD4828FC91D2001FE41F /* DIYview.swift in Sources */,
 				6EEDBD4B28FC9EF5001FE41F /* OnBoarding.swift in Sources */,
+				3FFB9A6E2902ACAA004B3215 /* Onboard.swift in Sources */,
+				3FFB9A702902AD3B004B3215 /* OnboardsData.swift in Sources */,
 				B608B25728DA3BB200D12806 /* StepByStepApp.swift in Sources */,
 				6EEDBD4D28FCA141001FE41F /* OnBoardModel.swift in Sources */,
 			);
