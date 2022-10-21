@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let OnboardData: [OnBoard] = [
-    OnBoard(Title: "Browse", Desc: "Description describe", Image: "Image"),
-    OnBoard(Title: "Search", Desc: "Description Search", Image: "Image")
+let CityData: [City] = [
+    City (Title: "Browse", Desc: "Description describe", Image: "Image"),
+    City (Title: "Search", Desc: "Description Search", Image: "Image")
 ]

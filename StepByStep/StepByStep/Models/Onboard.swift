@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-struct OnBoard: Identifiable{
-    var Id = UUID()
+struct City: Identifiable{
+    var id = UUID()
     var Title: String
     var Desc: String
     var Image: String

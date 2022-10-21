@@ -12,7 +12,7 @@ struct OnBoarding: View {
     @State private var email = ""
     @State private var password = ""
     
-    var BoardData : OnBoard = OnboardData[0]
+//    var city: City = CityData[0]
 
     var body: some View {
             VStack{
@@ -28,17 +28,13 @@ struct OnBoarding: View {
                                 .font(.system(size: 26, weight: .bold))
                                 .frame(maxWidth: .infinity, alignment: .center)
                                 .padding(.top, 40)
-                        }
-                            .padding(.top, 50)
+                        }.padding(.top, 50)
                 )
                 TabView(){
-                    OnBoardModel(title: "lol", image: "lol", description: "String").tag(0)
-                    OnBoardModel(title: "lolTwo", image: "lol", description: "String").tag(1)
+                    ForEach<[CityData], UUID, Any>(City, content: OnBoardView(title: City.Title, image: City.Image, description: City.Desc))
                 }.tabViewStyle(PageTabViewStyle())
-
-                
                 Button("Skip") {
-                    print("Button pressed!")
+                    print("Button pressed!") 
                 }
                 .padding()
                 .frame(maxWidth: 200)

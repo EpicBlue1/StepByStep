@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OnBoardModel: View {
+struct OnBoardView: View {
     
     var title : String
     var image : String
@@ -15,7 +15,7 @@ struct OnBoardModel: View {
     
     var body: some View {
         VStack{
-            Text(BoardData.Title)
+            Text("lol")
                 .font(.system(size: 22, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.bottom, 20)
@@ -33,8 +33,8 @@ struct OnBoardModel: View {
     }
 }
 
-struct OnBoardModel_Previews: PreviewProvider {
+struct OnBoardView_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardModel(title: "Title", image: "Image", description: "Description")
+        OnBoardView(title: "Title", image: "Image", description: "Description")
     }
 }
