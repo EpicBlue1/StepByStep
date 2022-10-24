@@ -14,6 +14,7 @@
 		B608B25728DA3BB200D12806 /* StepByStepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608B25628DA3BB200D12806 /* StepByStepApp.swift */; };
 		B608B25B28DA3BB400D12806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B608B25A28DA3BB400D12806 /* Assets.xcassets */; };
 		B608B25E28DA3BB500D12806 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B608B25D28DA3BB500D12806 /* Preview Assets.xcassets */; };
+		BF44CE8A2906F2D10078E689 /* ProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CE892906F2D10078E689 /* ProjectCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B608B25A28DA3BB400D12806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B608B25D28DA3BB500D12806 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B608B25F28DA3BB500D12806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF44CE892906F2D10078E689 /* ProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,13 +49,6 @@
 				3F5274EC2906B79F001A3C2C /* OnBoardView.swift */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		3F5274EE2906B7D0001A3C2C /* ViewComponents */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewComponents;
 			sourceTree = "<group>";
 		};
 		3F5274F32906BEC6001A3C2C /* Models */ = {
@@ -83,8 +78,8 @@
 		B608B25528DA3BB200D12806 /* StepByStep */ = {
 			isa = PBXGroup;
 			children = (
+				BF44CE882906F2BF0078E689 /* Components */,
 				3F5274F32906BEC6001A3C2C /* Models */,
-				3F5274EE2906B7D0001A3C2C /* ViewComponents */,
 				3F5274E72906B408001A3C2C /* Screens */,
 				B608B25628DA3BB200D12806 /* StepByStepApp.swift */,
 				B608B25A28DA3BB400D12806 /* Assets.xcassets */,
@@ -100,6 +95,14 @@
 				B608B25D28DA3BB500D12806 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BF44CE882906F2BF0078E689 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BF44CE892906F2D10078E689 /* ProjectCard.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +177,7 @@
 				3F5274ED2906B79F001A3C2C /* OnBoardView.swift in Sources */,
 				3F5274EB2906B6E2001A3C2C /* SettingsView.swift in Sources */,
 				3F5274F22906BEBC001A3C2C /* DiyModel.swift in Sources */,
+				BF44CE8A2906F2D10078E689 /* ProjectCard.swift in Sources */,
 				B608B25728DA3BB200D12806 /* StepByStepApp.swift in Sources */,
 				3F5274E92906B41C001A3C2C /* HomeView.swift in Sources */,
 			);

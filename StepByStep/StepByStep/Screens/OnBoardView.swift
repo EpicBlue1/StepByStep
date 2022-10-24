@@ -26,7 +26,7 @@ struct OnboardView: View {
                                     .padding(.top, 40)
                             }.padding(.top, 50)
                     )
-///
+                    Spacer()
                     Button("Skip") {
                         print("Button pressed!")
                     }
