@@ -20,11 +20,14 @@ struct Projects: Identifiable {
     let title : String
     let description : String
     let category : Category.RawValue
+    let author : String
     let steps : String
 }
 
 extension Projects {
     static let all: [Projects] = [
-        Projects(image: "testImage", title: "Random Title", description: "Ios suck", category: "Patio", steps: "Die")
+        Projects(image: "testImage", title: "Random Title", description: "Ios suck", category: "Patio", author: "Reinie", steps: "Die"),
+        Projects(image: "testImage", title: "Another Title", description: "Ek sukkel", category: "Patio", author: "Reinie", steps: "Die"),
+        
     ]
 }

@@ -9,8 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     
+    var projects: [Projects]
+    
     @State private var email = ""
-
+    
     var body: some View {
         NavigationView {
             VStack{
@@ -34,29 +36,29 @@ struct HomeView: View {
                                     .padding(.leading, 20)
                                     .padding(.trailing, 10)
                         }
-                                .padding(.top, 20)
-                                .padding(.leading, 20)
-                                .padding(.trailing, 20)
+                        .padding(.top, 20)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 20)
                     )
                     HStack{
                         Text("Projects")
-                        Text("18")
+//                        Text("\(projects.count)")
                     }.padding(.top, 20)
-                    ScrollView{
-                    }
+                List(Projects.all) { project in
+                    Text(project.title)
+                }
                     Spacer()
                 }.navigationBarHidden(true)
                 .ignoresSafeArea(.all)
             .background(Color("WhiteGray"))
         }
-
     }
 };
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HomeView()
+            HomeView(projects: Projects.all)
         }
     }
 }
