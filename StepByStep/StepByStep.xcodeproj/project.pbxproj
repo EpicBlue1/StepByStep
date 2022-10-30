@@ -15,6 +15,7 @@
 		B608B25B28DA3BB400D12806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B608B25A28DA3BB400D12806 /* Assets.xcassets */; };
 		B608B25E28DA3BB500D12806 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B608B25D28DA3BB500D12806 /* Preview Assets.xcassets */; };
 		BF44CE8A2906F2D10078E689 /* ProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44CE892906F2D10078E689 /* ProjectCard.swift */; };
+		BFB4862C290E670700D1DB74 /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4862B290E670700D1DB74 /* ProjectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B608B25D28DA3BB500D12806 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B608B25F28DA3BB500D12806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF44CE892906F2D10078E689 /* ProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCard.swift; sourceTree = "<group>"; };
+		BFB4862B290E670700D1DB74 /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 				3F5274E82906B41C001A3C2C /* HomeView.swift */,
 				3F5274EA2906B6E1001A3C2C /* SettingsView.swift */,
 				3F5274EC2906B79F001A3C2C /* OnBoardView.swift */,
+				BFB4862B290E670700D1DB74 /* ProjectView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				3F5274EB2906B6E2001A3C2C /* SettingsView.swift in Sources */,
 				3F5274F22906BEBC001A3C2C /* DiyModel.swift in Sources */,
 				BF44CE8A2906F2D10078E689 /* ProjectCard.swift in Sources */,
+				BFB4862C290E670700D1DB74 /* ProjectView.swift in Sources */,
 				B608B25728DA3BB200D12806 /* StepByStepApp.swift in Sources */,
 				3F5274E92906B41C001A3C2C /* HomeView.swift in Sources */,
 			);

@@ -41,11 +41,15 @@ struct HomeView: View {
                         .padding(.trailing, 20)
                     )
                     HStack{
-                        Text("Projects")
-//                        Text("\(projects.count)")
+                        Text("\(projects.count)")
+                        Text("\(projects.count > 1 ? "Projects" : "Project")")
                     }.padding(.top, 20)
-                List(Projects.all) { project in
-                    Text(project.title)
+                VStack{
+                    ScrollView {
+                        ForEach(projects) { Projects in
+                            ProjectCard(project: Projects)
+                        }
+                    }
                 }
                     Spacer()
                 }.navigationBarHidden(true)
