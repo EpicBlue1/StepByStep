@@ -29,10 +29,10 @@ struct HomeView: View {
                                     .cornerRadius(16)
                                     .padding([.horizontal],24)
                                     .background(RoundedRectangle(cornerRadius: 50).fill(Color.white))
-                                    .foregroundColor(.black)
-                                    .shadow(color: Color("Shadow"), radius: 8, x: 1, y: 1)
+                                    .foregroundColor(Color("WhiteBack"))
                                 Image(systemName: "gearshape")
                                     .scaleEffect(2)
+                                    .foregroundColor(Color("WhiteBack"))
                                     .padding(.leading, 20)
                                     .padding(.trailing, 10)
                         }
@@ -42,19 +42,38 @@ struct HomeView: View {
                     )
                     HStack{
                         Text("\(projects.count)")
-                        Text("\(projects.count > 1 ? "Projects" : "Project")")
-                    }.padding(.top, 20)
+                        Text("\(projects.count > 1 ? "Projects" : "Project")").padding(.trailing)
+                        ScrollView (.horizontal){
+                            HStack {
+                                ForEach(Category.allCases, id: \.self) { category in
+                                    HStack{
+                                        Text(category.rawValue)
+                                            .foregroundColor(.white)
+                                    }.frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding()
+                                    .background(Color("Green"))
+                                    .cornerRadius(25)
+                                }
+                            }
+                        }
+                    }.padding()
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                    
+                    
                 VStack{
                     ScrollView {
                         ForEach(projects) { Projects in
+                            NavigationLink(destination: ProjectView(project: Projects)) {
                             ProjectCard(project: Projects)
                         }
                     }
                 }
+            }
                     Spacer()
                 }.navigationBarHidden(true)
                 .ignoresSafeArea(.all)
             .background(Color("WhiteGray"))
+            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         }
     }
 };
@@ -63,6 +82,8 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             HomeView(projects: Projects.all)
+                .preferredColorScheme(.light)
+                
         }
     }
 }

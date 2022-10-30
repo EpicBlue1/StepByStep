@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProjectView: View {
-    var project: [Projects]
+    var project : Projects
     
     var body: some View {
         ScrollView{
@@ -20,21 +20,21 @@ struct ProjectView: View {
                     .cornerRadius(25)
                     .overlay(
                         VStack{
-                            HStack{
-                                Image(systemName: "arrowshape.turn.up.left.circle.fill")
-                                    .resizable()
-                                    .frame(width: 50, height: 50, alignment: .topTrailing)
-                                    .foregroundColor(.white)
-                                    .padding(.top, 10)
-                            }
-                            .frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomLeading)
-                            .padding()
+//                            HStack{
+//                                Image(systemName: "arrowshape.turn.up.left.circle.fill")
+//                                    .resizable()
+//                                    .frame(width: 50, height: 50, alignment: .topTrailing)
+//                                    .foregroundColor(.white)
+//                                    .padding(.top, 10)
+//                            }
+//                            .frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomLeading)
+//                            .padding()
                             Spacer()
                             Rectangle()
                                 .frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomLeading)
                                 .foregroundColor(Color.white)
-                                .overlay(Text("Title").font(.system(size: 26, weight: .bold)).foregroundColor(Color("DarkBlue")))
-                                .padding(.bottom, 70)
+                                .overlay(Text(project.title).font(.system(size: 26, weight: .bold)).foregroundColor(Color("DarkBlue")))
+                                .padding(.bottom, 80)
                         }
                     )
                 VStack{
@@ -51,7 +51,7 @@ struct ProjectView: View {
                                     .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                     .foregroundColor(Color("Shadow"))
                                 Spacer()
-                                Text("$450")
+                                Text(project.price)
                                     .font(.system(size: 22, weight: .bold))
                                     .foregroundColor(Color("DarkBlue"))
                                 Spacer()
@@ -60,19 +60,19 @@ struct ProjectView: View {
                                     .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                     .foregroundColor(Color("Shadow"))
                                 Spacer()
-                                Text("2 Days")
+                                Text(project.time)
                                     .font(.system(size: 22, weight: .bold))
                                     .foregroundColor(Color("DarkBlue"))
                                 Spacer()
                             })
-                    Text("Description").padding(.top, 20).foregroundColor(Color("DarkGray"))
+                    Text(project.description).padding(.top, 20).foregroundColor(Color("DarkGray"))
                     Text("Requirements:")
                         .font(.system(size: 26, weight: .bold)).foregroundColor(Color("DarkBlue"))
                         .padding(.top)
                         .padding(.bottom)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     VStack{
-                        Text("Requirements")
+                        Text(project.requirements)
                             .padding()
                             .foregroundColor(Color("DarkGray"))
                     }
@@ -86,7 +86,7 @@ struct ProjectView: View {
                         .padding(.bottom)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     VStack{
-                        Text("Steps")
+                        Text(project.steps)
                             .padding()
                             .foregroundColor(Color("DarkGray"))
                     }
@@ -98,11 +98,12 @@ struct ProjectView: View {
             }
         }.ignoresSafeArea(.all)
         .background(Color("WhiteGray"))
+        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
 }
 
 struct ProjectView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectView(project: Projects.all)
+        ProjectView(project: Projects.all[0])
     }
 }

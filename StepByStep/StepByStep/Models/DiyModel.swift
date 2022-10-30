@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Category: String {
+enum Category: String, CaseIterable{
     case Patio = "Patio"
     case WoodBuilds = "Wood Builds"
     case Plants = "For Your Plants"
@@ -22,12 +22,14 @@ struct Projects: Identifiable {
     let category : Category.RawValue
     let author : String
     let steps : String
+    let price : String
+    let time : String
+    let requirements : String
 }
 
 extension Projects {
     static let all: [Projects] = [
-        Projects(image: "testImage", title: "Random Title", description: "Ios suck", category: "Patio", author: "Reinie", steps: "Die"),
-        Projects(image: "testImage", title: "Another Title", description: "Ek sukkel", category: "Patio", author: "Reinels", steps: "Die"),
-        
+        Projects(image: "testImage", title: "Random Title", description: "Ios suck", category: "Patio", author: "Reinie", steps: "Die", price: "R100", time: "1 day", requirements: "This and that"),
+        Projects(image: "testImage", title: "Another Title", description: "Great stuff", category: "Patio", author: "Reinie", steps: "Die", price: "R100", time: "2 days", requirements: "That and this")
     ]
 }

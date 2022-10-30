@@ -10,8 +10,14 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         NavigationView {
-            Text("v1.0.0")
-                .navigationTitle("Settings")
+            VStack{
+                Text("v1.0.0")
+                    .navigationTitle("Settings")
+            }
+            .navigationBarHidden(true)
+            .ignoresSafeArea(.all)
+        .background(Color("DarkBlue"))
+        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         }
     }
 }

@@ -41,7 +41,6 @@ struct ProjectCard: View {
                     }.padding()
                 )
         } .padding()
-        .shadow(color: Color("Shadow"), radius: 8, x: 1, y: 1)
     }
 }
 
