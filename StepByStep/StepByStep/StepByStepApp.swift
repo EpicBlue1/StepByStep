@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct StepByStepApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            HomeView(projects: Projects.all)
+            HomeView(projects: Projects.all, ProjectsList: Projects.all)
         }
     }
 }

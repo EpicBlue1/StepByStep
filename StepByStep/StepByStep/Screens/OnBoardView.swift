@@ -11,6 +11,7 @@ struct OnboardView: View {
     
     var OnData: [OnBoardData]
     var projects: [Projects]
+    var ProjectsList : [Projects]
     
     @State var goWhenTrue: Bool = false
 
@@ -37,7 +38,7 @@ struct OnboardView: View {
                         }
                     }.tabViewStyle(PageTabViewStyle())
                     Spacer()
-                    NavigationLink(destination: HomeView(projects: projects).navigationBarBackButtonHidden(true), isActive: $goWhenTrue) {
+                NavigationLink(destination: HomeView(projects: projects, ProjectsList: ProjectsList).navigationBarBackButtonHidden(true), isActive: $goWhenTrue) {
                     Button("Skip") {
                         goWhenTrue = true
                     }
@@ -62,7 +63,7 @@ struct OnboardView: View {
 struct OnboardView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            OnboardView(OnData: OnBoardData.all, projects: Projects.all)
+            OnboardView(OnData: OnBoardData.all, projects: Projects.all, ProjectsList: Projects.all)
                 .preferredColorScheme(.light)
         }
     }

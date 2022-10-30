@@ -7,11 +7,17 @@
 
 import SwiftUI
 
+enum SearchScope: String, CaseIterable {
+    case title, description
+}
+
 struct HomeView: View {
     
     var projects: [Projects]
+    var ProjectsList : [Projects]
     
-    @State private var email = ""
+    @State private var searchText = ""
+    @State private var searchScope = SearchScope.title
     
     var body: some View {
         NavigationView {
@@ -22,7 +28,7 @@ struct HomeView: View {
                         .cornerRadius(25)
                         .overlay(
                             HStack{
-                                TextField("Search", text: self.$email)
+                                TextField("Search", text: self.$searchText)
                                     .frame(height: 55)
                                     .textFieldStyle(PlainTextFieldStyle())
                                     .padding([.horizontal], 4)
@@ -41,8 +47,8 @@ struct HomeView: View {
                         .padding(.trailing, 20)
                     )
                     HStack{
-                        Text("\(projects.count)")
-                        Text("\(projects.count > 1 ? "Projects" : "Project")").padding(.trailing)
+                        Text("\(filteredProjects.count)")
+                        Text("\(filteredProjects.count > 1 ? "Projects" : "Project")").padding(.trailing)
                         ScrollView (.horizontal){
                             HStack {
                                 ForEach(Category.allCases, id: \.self) { category in
@@ -62,19 +68,27 @@ struct HomeView: View {
                     
                 VStack{
                     ScrollView {
-                        ForEach(projects) { Projects in
+                        ForEach(filteredProjects) { Projects in
                             NavigationLink(destination: ProjectView(project: Projects)) {
                             ProjectCard(project: Projects)
                         }
                     }
                 }
             }
-                    Spacer()
-                }.navigationBarHidden(true)
-                .ignoresSafeArea(.all)
-            .background(Color("WhiteGray"))
-            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        Spacer()
+    }.navigationBarHidden(true)
+    .ignoresSafeArea(.all)
+    .background(Color("WhiteGray"))
+    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             
+        }
+    }
+    
+    var filteredProjects: [Projects] {
+        if searchText.isEmpty {
+            return projects
+        } else {
+            return projects.filter {$0.title.localizedCaseInsensitiveContains(searchText)}
         }
     }
 };
@@ -82,7 +96,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HomeView(projects: Projects.all)
+            HomeView(projects: Projects.all, ProjectsList: Projects.all)
                 .preferredColorScheme(.light)
                 
         }
