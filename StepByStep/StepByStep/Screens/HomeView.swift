@@ -74,6 +74,7 @@ struct HomeView: View {
                 .ignoresSafeArea(.all)
             .background(Color("WhiteGray"))
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            
         }
     }
 };

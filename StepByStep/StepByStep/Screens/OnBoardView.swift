@@ -10,12 +10,15 @@ import SwiftUI
 struct OnboardView: View {
     
     var OnData: [OnBoardData]
+    var projects: [Projects]
+    
+    @State var goWhenTrue: Bool = false
 
     var body: some View {
         NavigationView {
             VStack{
                     Rectangle()
-                        .frame(width: .infinity, height: 250, alignment: .topLeading)
+                        .frame(maxWidth: .infinity, maxHeight: 250, alignment: .topLeading)
                         .foregroundColor(Color("LightYellow"))
                         .cornerRadius(25)
                         .overlay(
@@ -34,10 +37,12 @@ struct OnboardView: View {
                         }
                     }.tabViewStyle(PageTabViewStyle())
                     Spacer()
+                    NavigationLink(destination: HomeView(projects: projects).navigationBarBackButtonHidden(true), isActive: $goWhenTrue) {
                     Button("Skip") {
-                        print("Button pressed!")
+                        goWhenTrue = true
                     }
-                    .padding()
+                }
+                    .padding  ()
                     .frame(maxWidth: 200)
                     .background(Color("Orange"))
                     .clipShape(Capsule())
@@ -50,7 +55,6 @@ struct OnboardView: View {
                 .background(Color("WhiteGray"))
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             .navigationBarHidden(true)
-            
         }
     }
 }
@@ -58,7 +62,7 @@ struct OnboardView: View {
 struct OnboardView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            OnboardView(OnData: OnBoardData.all)
+            OnboardView(OnData: OnBoardData.all, projects: Projects.all)
                 .preferredColorScheme(.light)
         }
     }
