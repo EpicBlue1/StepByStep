@@ -11,6 +11,10 @@ enum SearchScope: String, CaseIterable {
     case title, description
 }
 
+enum FilterScope: String {
+    case title
+}
+
 struct HomeView: View {
     
     var projects: [Projects]
@@ -18,6 +22,7 @@ struct HomeView: View {
     
     @State private var searchText = ""
     @State private var searchScope = SearchScope.title
+    @State var filtering: String = ""
     
     var body: some View {
         NavigationView {
@@ -36,40 +41,42 @@ struct HomeView: View {
                                     .padding([.horizontal],24)
                                     .background(RoundedRectangle(cornerRadius: 50).fill(Color.white))
                                     .foregroundColor(Color("WhiteBack"))
-                                Image(systemName: "gearshape")
-                                    .scaleEffect(2)
-                                    .foregroundColor(Color("WhiteBack"))
-                                    .padding(.leading, 20)
-                                    .padding(.trailing, 10)
+                                NavigationLink(destination: SettingsView()) {
+                                    Image(systemName: "gearshape")
+                                        .scaleEffect(2)
+                                        .foregroundColor(Color("WhiteBack"))
+                                        .padding(.leading, 20)
+                                        .padding(.trailing, 10)
+                                }
                         }
                         .padding(.top, 20)
                         .padding(.leading, 20)
                         .padding(.trailing, 20)
                     )
                     HStack{
-                        Text("\(filteredProjects.count)")
-                        Text("\(filteredProjects.count > 1 ? "Projects" : "Project")").padding(.trailing)
+                        Text("\(filteredProjects.filter {filtering == "" ? $0.category == $0.category : $0.category == filtering}.count)")
+                        Text("\(filteredProjects.filter {filtering == "" ? $0.category == $0.category : $0.category == filtering}.count > 1 ? "Projects" : "Project")").padding(.trailing)
                         ScrollView (.horizontal){
                             HStack {
                                 ForEach(Category.allCases, id: \.self) { category in
-                                    HStack{
-                                        Text(category.rawValue)
-                                            .foregroundColor(.white)
+                                    Button(category.rawValue) {
+                                        filtering = category.rawValue
                                     }.frame(maxWidth: .infinity, alignment: .leading)
                                     .padding()
                                     .background(Color("Green"))
+                                    .foregroundColor(.white)
                                     .cornerRadius(25)
                                 }
                             }
                         }
                     }.padding()
                     .frame(maxWidth: .infinity, alignment: .topLeading)
-                    
+                Text(filtering)
                     
                 VStack{
                     ScrollView {
-                        ForEach(filteredProjects) { Projects in
-                            NavigationLink(destination: ProjectView(project: Projects)) {
+                        ForEach(filteredProjects.filter {filtering == "" ? $0.category == $0.category : $0.category == filtering}) { Projects in
+                            NavigationLink(destination: ProjectView(project: Projects, Requirements: [Projects])) {
                             ProjectCard(project: Projects)
                         }
                     }

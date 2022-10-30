@@ -9,31 +9,23 @@ import SwiftUI
 
 struct ProjectView: View {
     var project : Projects
+    var Requirements : [Projects]
     
     var body: some View {
         ScrollView{
             VStack{
-                Image("testImage")
+                Image(project.image)
                     .resizable()
                     .scaledToFill()
                     .frame(maxWidth: .infinity, maxHeight: 280)
                     .cornerRadius(25)
                     .overlay(
                         VStack{
-//                            HStack{
-//                                Image(systemName: "arrowshape.turn.up.left.circle.fill")
-//                                    .resizable()
-//                                    .frame(width: 50, height: 50, alignment: .topTrailing)
-//                                    .foregroundColor(.white)
-//                                    .padding(.top, 10)
-//                            }
-//                            .frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomLeading)
-//                            .padding()
                             Spacer()
                             Rectangle()
                                 .frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomLeading)
                                 .foregroundColor(Color.white)
-                                .overlay(Text(project.title).font(.system(size: 26, weight: .bold)).foregroundColor(Color("DarkBlue")))
+                                .overlay(Text(project.title).font(.system(size: 22, weight: .bold)).foregroundColor(Color("DarkBlue")))
                                 .padding(.bottom, 80)
                         }
                     )
@@ -42,7 +34,6 @@ struct ProjectView: View {
                         .frame(maxWidth: .infinity, minHeight: 60, maxHeight: 60)
                         .cornerRadius(25)
                         .foregroundColor(.white)
-                        .shadow(color: Color("Shadow"), radius: 8, x: 1, y: 1)
                         .overlay(
                             HStack{
                                 Spacer()
@@ -72,13 +63,15 @@ struct ProjectView: View {
                         .padding(.bottom)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     VStack{
-                        Text(project.requirements)
-                            .padding()
-                            .foregroundColor(Color("DarkGray"))
+                        ForEach(project.requirements, id: \.self) { Data in
+                            Text(Data)
+                                .padding()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color.white)
-                    .shadow(color: Color("Shadow"), radius: 8, x: 1, y: 1)
                     .cornerRadius(25)
                     Text("Steps:")
                         .font(.system(size: 26, weight: .bold)).foregroundColor(Color("DarkBlue"))
@@ -92,7 +85,6 @@ struct ProjectView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color.white)
-                    .shadow(color: Color("Shadow"), radius: 8, x: 1, y: 1)
                     .cornerRadius(25)
                 }.padding()
             }
@@ -104,6 +96,6 @@ struct ProjectView: View {
 
 struct ProjectView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectView(project: Projects.all[0])
+        ProjectView(project: Projects.all[0], Requirements: Projects.all)
     }
 }
