@@ -27,7 +27,7 @@ struct Projects: Identifiable {
 extension Projects {
     static let all: [Projects] = [
         Projects(image: "testImage", title: "Random Title", description: "Ios suck", category: "Patio", author: "Reinie", steps: "Die"),
-        Projects(image: "testImage", title: "Another Title", description: "Ek sukkel", category: "Patio", author: "Reinie", steps: "Die"),
+        Projects(image: "testImage", title: "Another Title", description: "Ek sukkel", category: "Patio", author: "Reinels", steps: "Die"),
         
     ]
 }

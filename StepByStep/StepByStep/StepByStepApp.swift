@@ -11,7 +11,7 @@ import SwiftUI
 struct StepByStepApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(projects: Projects.all)
         }
     }
 }
