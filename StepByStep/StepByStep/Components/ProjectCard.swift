@@ -25,7 +25,7 @@ struct ProjectCard: View {
                             .scaledToFill()
                             .frame(maxWidth: 135)
                             .cornerRadius(25)
-                        VStack{
+                        VStack{ 
                             Text(project.title)
                                 .font(.system(size: 26, weight: .bold))
                                 .frame(maxWidth: .infinity, alignment: .leading)
