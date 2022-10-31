@@ -28,7 +28,7 @@ struct HomeView: View {
         NavigationView {
             VStack{
                     Rectangle()
-                        .frame(width: .infinity, height: 150, alignment: .topLeading)
+                        .frame(maxWidth: .infinity, maxHeight: 150, alignment: .topLeading)
                         .foregroundColor(Color("LightYellow"))
                         .cornerRadius(25)
                         .overlay(
@@ -39,12 +39,12 @@ struct HomeView: View {
                                     .padding([.horizontal], 4)
                                     .cornerRadius(16)
                                     .padding([.horizontal],24)
-                                    .background(RoundedRectangle(cornerRadius: 50).fill(Color.white))
+                                    .background(RoundedRectangle(cornerRadius: 50).fill(Color("WhiteBack")))
                                     .foregroundColor(Color("WhiteBack"))
                                 NavigationLink(destination: SettingsView()) {
                                     Image(systemName: "gearshape")
                                         .scaleEffect(2)
-                                        .foregroundColor(Color("WhiteBack"))
+                                        .foregroundColor(Color("TextColor"))
                                         .padding(.leading, 20)
                                         .padding(.trailing, 10)
                                 }
@@ -58,7 +58,7 @@ struct HomeView: View {
                         Text("\(filteredProjects.filter {filtering == "" ? $0.category == $0.category : $0.category == filtering}.count > 1 ? "Projects" : "Project")").padding(.trailing)
                         ScrollView (.horizontal){
                             HStack {
-                                ForEach(Category.allCases, id: \.self) { category in
+                                ForEach(Category.allCases.filter {filtering == "" ? $0.rawValue == $0.rawValue : $0.rawValue == filtering }, id: \.self) { category in
                                     Button(category.rawValue) {
                                         filtering = category.rawValue
                                     }.frame(maxWidth: .infinity, alignment: .leading)
@@ -67,6 +67,13 @@ struct HomeView: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(25)
                                 }
+                                Button("Clear Filter") {
+                                    filtering = ""
+                                }.frame(maxWidth: .infinity, alignment: .leading)
+                                .padding()
+                                .background(Color("Orange"))
+                                .foregroundColor(.white)
+                                .cornerRadius(25)
                             }
                         }
                     }.padding()
@@ -80,7 +87,7 @@ struct HomeView: View {
                             ProjectCard(project: Projects)
                         }
                     }
-                }
+                    }.padding()
             }
         Spacer()
     }.navigationBarHidden(true)
@@ -104,8 +111,6 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             HomeView(projects: Projects.all, ProjectsList: Projects.all)
-                .preferredColorScheme(.light)
-                
         }
     }
 }
