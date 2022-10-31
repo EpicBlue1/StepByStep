@@ -97,5 +97,6 @@ struct ProjectView: View {
 struct ProjectView_Previews: PreviewProvider {
     static var previews: some View {
         ProjectView(project: Projects.all[0], Requirements: Projects.all)
+            .preferredColorScheme(.dark)
     }
 }
