@@ -17,7 +17,7 @@ struct ProjectCard: View {
                 .frame(maxWidth: .infinity)
                 .frame(height: 160)
                 .cornerRadius(25)
-                .foregroundColor(Color("CardColor"))
+                .foregroundColor(Color.white)
                 .overlay(
                     HStack{
                         Image(project.image)
@@ -30,24 +30,21 @@ struct ProjectCard: View {
                                 .padding(.top)
                                 .font(.system(size: 22, weight: .bold))
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .foregroundColor(Color("TextColor"))
                             Spacer()
                             Text(project.author)
-                                .foregroundColor(Color("TextColor"))
                                 .font(.system(size: 18, weight: .bold))
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
                         }.padding(.leading, 20)
                     }.padding()
                 )
-        }
+        } .padding()
     }
 }
 
 struct ProjectCard_Previews: PreviewProvider {
     static var previews: some View {
         ProjectCard(project: Projects.all[0])
-            .preferredColorScheme(.dark)
     }
 }
 

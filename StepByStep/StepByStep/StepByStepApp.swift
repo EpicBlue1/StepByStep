@@ -12,7 +12,7 @@ struct StepByStepApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SplashView(OnData: OnBoardData.all)
-            }
+            HomeView(projects: Projects.all, ProjectsList: Projects.all)
         }
     }
+}

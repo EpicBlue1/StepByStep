@@ -64,6 +64,7 @@ struct OnboardView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             OnboardView(OnData: OnBoardData.all, projects: Projects.all, ProjectsList: Projects.all)
+                .preferredColorScheme(.light)
         }
     }
 }

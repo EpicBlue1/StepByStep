@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-enum Schemetype: Int, Identifiable, CaseIterable {
-    var id: Self { self }
+enum SchemeType: Int, Identifiable, CaseIterable {
+    var id: Self {self}
     case system
     case light
     case dark
 }
 
-extension Schemetype {
+extension SchemeType {
     var title: String {
         switch self {
         case .system:
@@ -23,57 +23,27 @@ extension Schemetype {
             return "Light"
         case .dark:
             return "Dark"
+        }
     }
-}
 }
 
 struct SettingsView: View {
     
-    @AppStorage("systemThemeVal") private var systemTheme: Int = Schemetype.allCases.first!.rawValue
-    
-    private var selectedScheme: ColorScheme? {
-        guard let theme = Schemetype(rawValue: systemTheme) else { return nil }
-        switch theme {
-        case .light:
-            return .light
-        case .dark:
-            return .dark
-        default:
-            return nil
-        }
-    }
-    
+    @AppStorage("systemThemeVal") private var systemTheme: Int = SchemeType.allCases.first!.rawValue
     var body: some View {
         NavigationView {
             VStack{
-                Spacer()
-                
-                Text("Settings")
-                    .font(.system(size: 26, weight: .bold))
-                    .frame(maxWidth: .infinity, alignment: .center)
-                
-                Spacer()
-                
-                Picker("Mode", selection: $systemTheme) {
-                    ForEach(Schemetype.allCases) { item in
-                        Text(item.title)
-                            .tag(item.rawValue)
-                    }
-                }.pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
-                Spacer()
-                
                 Text("v1.0.0")
+                Picker(selection: $systemTheme, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/, content: {
+                    /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/;
+                    /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
+                })
             }
-            .padding()
             .navigationBarHidden(true)
             .ignoresSafeArea(.all)
-            .background(Color("WhiteGray"))
-            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        .background(Color("DarkBlue"))
+        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        .preferredColorScheme(selectedScheme)
     }
 }
 
