@@ -22,7 +22,6 @@ This term, I learned the fundamentals of iOS development by designing and buildi
 - [Build With](#Build-With)
 - [Features](#Features-and-Functions)
 - [Development-Process](#Development-Process)
-  - [Ideation](#Ideation)
   - [Wireframes](#Wireframes)
   - [Challenges](#Challenges)
   - [Challenges](#Above-And-Beyond)
@@ -71,21 +70,25 @@ This term, I learned the fundamentals of iOS development by designing and buildi
 
 ### Theme and Research
 
+With an initial idea in mind the theme was explored and various Diy project websites to get an idea of the data structure.
+
 <p align="center">
     <img src="Assets/Theme.png" align="center" height="300" >
 </p>
 
 ### MoodBoard
 
+With the idea explored inspiration for the visual look needed to be explored getting the idea for color use and ui implementation.
+
 <p align="center">
     <img src="Assets/MoodBoard.png" align="center" height="300" >
 </p>
 
-### Ideation
-
 [Pinterest Board For Concept](https://za.pinterest.com/debeer0072/ios_term_4/)
 
 ### UserFlow
+
+Planning out the user flow proved to be useful for planning all the screens as well as the functionality and features.
 
 <p align="center">
     <img src="Assets/UserFlow.png" align="center" height="300" >
@@ -96,7 +99,7 @@ This term, I learned the fundamentals of iOS development by designing and buildi
 Final wireframes:
 
 <p align="center">
-    <img src="assets/Initial_Wireframes.png" align="center" height="450" >
+    <img src="Assets/WireFrames.png" align="center" height="450" >
 </p>
 
 ## Challenges
