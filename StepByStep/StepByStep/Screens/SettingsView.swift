@@ -48,7 +48,7 @@ struct SettingsView: View {
             VStack{
                 Spacer()
                 
-                Text("Settings")
+                Text("Settings").foregroundColor(Color("TextColor"))
                     .font(.system(size: 26, weight: .bold))
                     .frame(maxWidth: .infinity, alignment: .center)
                 
@@ -65,7 +65,7 @@ struct SettingsView: View {
                 Spacer()
                 
                 VStack{
-                    Text("Github")
+                    Text("Github").foregroundColor(Color("BlackNBlack"))
                         .font(.system(size: 26, weight: .bold))
                         .frame(maxWidth: .infinity, alignment: .center)
                     HStack{
@@ -75,24 +75,24 @@ struct SettingsView: View {
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .cornerRadius(25)
                         Spacer()
-                        Text("EpicBlue1").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        Text("EpicBlue1").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).foregroundColor(Color("BlackNBlack"))
                         Spacer()
                         Button (action: {if let url = URL(string: "https://homebnc.com"){
                             UIApplication.shared.open(url)
-                        }}) { Text("Visit Profile") .padding() }
+                        }}) { Text("Visit Profile") .padding().foregroundColor(Color("BlackNBlack")) }
                         .background(Color("DarkBlue"))
                         .foregroundColor(.white)
                         .cornerRadius(25)
                  
                     }
                     
-                    Text("Hi Im Reinhardt de Beer, as second year developer at Open Window. Find out more by clicking visit profile!").padding()
+                    Text("Hi Im Reinhardt de Beer, as second year developer at Open Window. Find out more by clicking visit profile!").padding().foregroundColor(Color("BlackNBlack"))
                 }.padding()
                 .background(Color.white)
                 .cornerRadius(25)
                 Spacer()
                 VStack{
-                    Text("Special thanks to:")
+                    Text("Special thanks to:").foregroundColor(Color("BlackNBlack"))
                         .font(.system(size: 26, weight: .bold))
                         .frame(maxWidth: .infinity, alignment: .center)
                     HStack{
@@ -102,9 +102,8 @@ struct SettingsView: View {
                             .frame(width: 200, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .cornerRadius(25)
                         Spacer()
-                        Text("Where I got the projects")
-                        Spacer()
-                        
+                        Text("Where I got the projects").foregroundColor(Color("BlackNBlack"))
+                        Spacer()                    
                     }
                     Button (action: {if let url = URL(string: "https://homebnc.com"){
                         UIApplication.shared.open(url)

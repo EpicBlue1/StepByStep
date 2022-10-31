@@ -14,10 +14,18 @@ struct SplashView: View {
     
     var OnData: [OnBoardData]
     
+    @AppStorage("UserSession") var UserSession: Bool = false
+    
     var body: some View {
         ZStack{
-            ZStack{
-                OnboardView(OnData: OnBoardData.all, projects: Projects.all, ProjectsList: Projects.all)
+            if UserSession {
+                ZStack{
+                    HomeView(projects: Projects.all, ProjectsList: Projects.all)
+                }
+            } else {
+                ZStack{
+                    OnboardView(OnData: OnBoardData.all, projects: Projects.all, ProjectsList: Projects.all)
+                }
             }
             ZStack{
                 Color("LightYellow")

@@ -24,6 +24,8 @@ struct HomeView: View {
     @State private var searchScope = SearchScope.title
     @State var filtering: String = ""
     
+    @State var goWhenTrue: Bool = false
+    
     var body: some View {
         NavigationView {
             VStack{
@@ -94,9 +96,12 @@ struct HomeView: View {
     .ignoresSafeArea(.all)
     .background(Color("WhiteGray"))
     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            
-        }
+            .onAppear(
+                perform: {
+                    UserDefaults.standard.set(true, forKey: "UserSession")
+            })
     }
+}
     
     var filteredProjects: [Projects] {
         if searchText.isEmpty {
