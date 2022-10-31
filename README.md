@@ -14,7 +14,7 @@ Reinhardt de Beer
     <img src="Assets/Logo.png" align="center" height="300" width="300" >
 </p>
 
-Utilising the MERN stack's other technologies, including Node.js, Express.js, and MongoDB Atlas. I implemented these technologies inside a mock e-commerce web application. Choosing lenses and accessories as my niche product and theming around that. From which the project LIB was designed and developed.
+This term, I learned the fundamentals of iOS development by designing and building an app with Xcode IDE and swiftUI to manage recipes/library items. My theme chosen was OutDoors DIY, specifically for Patios, Fireplaces, plants and Wood Builds.
 
 ## Table of contents
 
@@ -34,7 +34,6 @@ Utilising the MERN stack's other technologies, including Node.js, Express.js, an
 - [Authors](#Authors)
 - [License](#License)
 - [Contact](#Contact)
-- [Acknowledgements](#Acknowledgements)
 
 ## Installation
 
@@ -58,23 +57,39 @@ Utilising the MERN stack's other technologies, including Node.js, Express.js, an
 
 | Name              | Link                                       |
 | ----------------- | ------------------------------------------ |
-| <p>xCode 12.4</p> | https://developer.apple.com/xcode/         |
+| <p>Xcode 12.4</p> | https://developer.apple.com/xcode/         |
 | <p>SwiftUI</p>    | https://developer.apple.com/xcode/swiftui/ |
 
 ## Features and Functions
 
-- Log In and Validation
-- Individual Product pages
-- Cart: add and remove
-- Update, delete and add if admin on Inventory page
-- Filter and sort on all products page
-- An Image Slider on Landing page
+- Utilizes App Storage to only show OnBoarding when the user opens the app the first time
+- Search Diy Projects
+- Filter through 4 Categories of Diy Projects and clear filter
+- Dark mode and Light mode switch within settings
 
 ## Development Process
+
+### Theme and Research
+
+<p align="center">
+    <img src="Assets/Theme.png" align="center" height="300" >
+</p>
+
+### MoodBoard
+
+<p align="center">
+    <img src="Assets/MoodBoard.png" align="center" height="300" >
+</p>
 
 ### Ideation
 
 [Pinterest Board For Concept](https://za.pinterest.com/debeer0072/ios_term_4/)
+
+### UserFlow
+
+<p align="center">
+    <img src="Assets/UserFlow.png" align="center" height="300" >
+</p>
 
 ### Wireframes
 
@@ -86,17 +101,17 @@ Final wireframes:
 
 ## Challenges
 
-- Not focussing on the core functionality first.
-- Server crashes (the result of a spelling mistake, the way I pass my data to the backend, and so on.)
-- Keeping track of props ( I utilized a lot of props I kept losing track, a better alternative would be sessionstorage.)
+- Using an emulator to be able to use Xcode
+- Understanding how SwiftUI passes arrays from one view to another
+- SwiftUI's errors not being clear
 
 ## Future Implementation
 
-- Complete individual page: add variations, make add to cart and quantity work.
-- Complete checkout and its backend functionality
-- Orders Page
-- Search
-- Add product qts together if same product
+- Pull data from an API
+- Visual Clean up
+- Being able to add your own Projects
+- More Images within steps
+- Favorite Projects
 
 ## Final Outcome
 
@@ -114,7 +129,7 @@ Final wireframes:
 
 To see a run through of the application, click below:
 
-[View Demonstration](https://youtu.be/DBMcaTIUYoc)
+[View Demonstration](https://youtu.be/KTYC9XM31s4)
 
 ## Authors
 
@@ -128,7 +143,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 - **Reinhardt de Beer** - [21100115@virtualwindow.co.za](mailto:21100115@virtualwindow.co.za) - [@rdb_fotopatat](https://www.instagram.com/rdb_fotopatat/)
 - **Project Link** - https://github.com/EpicBlue1/StepByStep
-
-## Acknowledgements
-
-- **Contexts and useReducers** - [Leander van Aarde Github](https://github.com/LeandervanAarde)
