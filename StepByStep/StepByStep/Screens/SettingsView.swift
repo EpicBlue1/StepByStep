@@ -64,6 +64,60 @@ struct SettingsView: View {
                 
                 Spacer()
                 
+                VStack{
+                    Text("Github")
+                        .font(.system(size: 26, weight: .bold))
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    HStack{
+                        Image("Profile")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(25)
+                        Spacer()
+                        Text("EpicBlue1").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        Spacer()
+                        Button (action: {if let url = URL(string: "https://homebnc.com"){
+                            UIApplication.shared.open(url)
+                        }}) { Text("Visit Profile") .padding() }
+                        .background(Color("DarkBlue"))
+                        .foregroundColor(.white)
+                        .cornerRadius(25)
+                 
+                    }
+                    
+                    Text("Hi Im Reinhardt de Beer, as second year developer at Open Window. Find out more by clicking visit profile!").padding()
+                }.padding()
+                .background(Color.white)
+                .cornerRadius(25)
+                Spacer()
+                VStack{
+                    Text("Special thanks to:")
+                        .font(.system(size: 26, weight: .bold))
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    HStack{
+                        Image("WebLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(25)
+                        Spacer()
+                        Text("Where I got the projects")
+                        Spacer()
+                        
+                    }
+                    Button (action: {if let url = URL(string: "https://homebnc.com"){
+                        UIApplication.shared.open(url)
+                    }}) { Text("Visit")
+                    }.padding()
+                    .background(Color("DarkBlue"))
+                    .foregroundColor(.white)
+                    .cornerRadius(25)
+                }.padding()
+                .background(Color.white)
+                .cornerRadius(25)
+                
+                Spacer()
                 Text("v1.0.0")
             }
             .padding()
