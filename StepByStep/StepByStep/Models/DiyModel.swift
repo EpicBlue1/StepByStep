@@ -19,9 +19,9 @@ struct Projects: Identifiable {
     let image : String
     let title : String
     let description : String
-    let category : [Category.RawValue]
+    let category : Category.RawValue
     let author : String
-    let steps : String
+    let steps : [String]
     let price : String
     let time : String
     let requirements : [String]
