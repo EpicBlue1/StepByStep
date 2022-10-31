@@ -65,6 +65,7 @@ struct ProjectView: View {
                     VStack{
                         ForEach(project.requirements, id: \.self) { Data in
                             Text(Data)
+                                .foregroundColor(Color("BlackNBlack"))
                                 .padding()
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         }
@@ -79,9 +80,12 @@ struct ProjectView: View {
                         .padding(.bottom)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     VStack{
-                        Text(project.steps)
-                            .padding()
-                            .foregroundColor(Color("DarkGray"))
+                        ForEach(project.steps, id: \.self) { Data in
+                            Text(Data)
+                                .padding()
+                                .foregroundColor(Color("BlackNBlack"))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color.white)
