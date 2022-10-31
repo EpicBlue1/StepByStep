@@ -23,6 +23,7 @@ struct OnBoardCard: View {
                 .padding(.bottom, 30)
             Image(Data.image)
                 .resizable()
+                .scaledToFit()
                 .frame(maxWidth: .infinity)
                 .frame(height: 300)
                 .cornerRadius(25)
