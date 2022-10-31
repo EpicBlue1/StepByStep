@@ -77,13 +77,12 @@ struct SettingsView: View {
                         Spacer()
                         Text("EpicBlue1").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).foregroundColor(Color("BlackNBlack"))
                         Spacer()
-                        Button (action: {if let url = URL(string: "https://homebnc.com"){
+                        Button (action: {if let url = URL(string: "https://github.com/EpicBlue1"){
                             UIApplication.shared.open(url)
                         }}) { Text("Visit Profile") .padding().foregroundColor(Color("BlackNBlack")) }
                         .background(Color("DarkBlue"))
                         .foregroundColor(.white)
-                        .cornerRadius(25)
-                 
+                        .cornerRadius(25)                 
                     }
                     
                     Text("Hi Im Reinhardt de Beer, as second year developer at Open Window. Find out more by clicking visit profile!").padding().foregroundColor(Color("BlackNBlack"))
@@ -103,7 +102,7 @@ struct SettingsView: View {
                             .cornerRadius(25)
                         Spacer()
                         Text("Where I got the projects").foregroundColor(Color("BlackNBlack"))
-                        Spacer()                    
+                        Spacer()
                     }
                     Button (action: {if let url = URL(string: "https://homebnc.com"){
                         UIApplication.shared.open(url)
